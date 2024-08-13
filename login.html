@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login</title>
+  <!-- materialize icons, css & js -->
+  <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" href="/css/styles.css" rel="stylesheet">
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="img/png" sizes="32x32" href="img/lattte.png">
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="/img/icons/halaszle-96x96.png">
+  <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+  <meta name="theme-color" content="#FFE1C4">
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+</head>
+<body>
+
+
+
+<form name="login-form" id="login_form" method="post" action="#" enctype="multipart/form-data">
+
+  <!-- <label class="switch">
+    <input type="checkbox" id="themeSwitch">
+    <span class="slider round"></span>
+  </label> -->
+  <br>
+    <label for="username">Username:</label>
+    <input type="text" name="login_email" id="login_email" class="form-control">
+  
+    <label for="password">Password:</label>
+    <input type="password" name="login_password" id="login_password" class="form-control">
+    <br>
+    <br>
+    <!-- <label>Remember me:<input type="checkbox" id="checkbox" name="remember-me"></label> -->
+    <br>
+    <br>
+    <button type="button" id="login" name="login" class="btn btn-success" >Log In</a></button> 
+    <a href="/login.html">
+    <br>
+    <b>If you have not yet register please do so below!</b>
+    <br>
+    <br>
+
+    <button type="register" href="registration.html"><a href="/registration.html">Register</a></button>
+    
+
+  </form>
+  <script src="/js/app.js"></script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+  //import { getAuth, signInWithCustomToken } from "firebase/auth";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCE-ZAKU8gCF6LA_drUzaIar5nc6EGPcN8",
+    authDomain: "gaborweb-auth.firebaseapp.com",
+    projectId: "gaborweb-auth",
+    storageBucket: "gaborweb-auth.appspot.com",
+    messagingSenderId: "350924013300",
+    appId: "1:350924013300:web:394e7e5106ae58d692e8a1",
+    measurementId: "G-8KGCVBHST1"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+  
+
+  const auth = getAuth();
+
+  // console.log(app);
+
+  // //----- New Registration code start	  
+  // document.getElementById("register").addEventListener("click", function() {
+	// 	  var email =  document.getElementById("email").value;
+	// 	  var password = document.getElementById("password").value;
+	// 	  //For new registration
+	// 	  createUserWithEmailAndPassword(auth, email, password)
+	// 	  .then((userCredential) => {
+	// 	    // Signed in 
+	// 	    const user = userCredential.user;
+	// 	    console.log(user);
+	// 	    alert("Registration successfully!!");
+	// 	    // ...
+	// 	  })
+	// 	  .catch((error) => {
+	// 	    const errorCode = error.code;
+	// 	    const errorMessage = error.message;
+	// 	    // ..
+	// 	    console.log(errorMessage);
+	// 	    alert(error);
+	// 	  });		  		  
+	//   });
+	//   //----- End
+
+	  //----- Login code start	  
+	  document.getElementById("login").addEventListener("click", function() {
+		  var email =  document.getElementById("login_email").value;
+		  var password = document.getElementById("login_password").value;
+
+		  signInWithEmailAndPassword(auth, email, password)
+		  .then((userCredential) => {
+		    // Signed in 
+		    const user = userCredential.user;
+		    console.log(user);
+		    alert(user.email+" Login successfully!!!");
+		    window.location.href = 'index.html';
+		    // ...
+		  })
+		  .catch((error) => {
+		    const errorCode = error.code;
+		    const errorMessage = error.message;
+		    console.log(errorMessage);
+		    alert(errorMessage);
+		  });		  		  
+	  });
+	  //----- End
+
+	  // //----- Logout code start	  
+	  // document.getElementById("logout").addEventListener("click", function() {
+		//   signOut(auth).then(() => {
+		// 	  // Sign-out successful.
+		// 	  console.log('Sign-out successful.');
+		// 	  alert('Sign-out successful.');
+		// 	  document.getElementById('logout').style.display = 'none';
+		// 	}).catch((error) => {
+		// 	  // An error happened.
+		// 	  console.log('An error happened.');
+		// 	});		  		  
+	  // });
+	  // //----- End
+
+</script>
+</body>
+  </html>

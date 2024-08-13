@@ -1,0 +1,106 @@
+<form action="#">
+    <p>
+      <label>
+        <input name="group1" type="radio" checked />
+        <span>Red</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="group1" type="radio" />
+        <span>Yellow</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input class="with-gap" name="group1" type="radio"  />
+        <span>Green</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="group1" type="radio" disabled="disabled" />
+        <span>Brown</span>
+      </label>
+    </p>
+  </form>
+
+  <form action="#">
+    <p class="range-field">
+      <input type="range" id="test5" min="0" max="100" />
+      <span class="thumb active"></span>
+    </p>
+  </form>
+
+<br>
+
+  <label for="gender">Gender:</label>
+    <select id="gender" name="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+
+    <div class="range-field">
+        <input type="range" min="0" max="100" value="50" oninput="rangeValue.innerText = this.value">
+        <p id="rangeValue">50</p>
+        </div>
+
+        <div class="input-field col s12">
+            <label for="subscribe">How would you like to be contacted about our deals and news?</label>
+            <br>
+            <select multiple>
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Phone</option>
+              <option value="2">E-mail</option>
+              <option value="3">Sms</option>
+              
+            </select>
+            <br>
+            <label>Materialize Multiple Select</label>
+          </div>
+
+          <ul class="pagination">
+            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+          </ul>
+
+          <table>
+            <tr>
+              <th>Day</th>
+              <th>Opening Hours</th>
+            </tr>
+            <tr>
+              <td>Monday</td>
+              <td>11am - 10pm</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>11am - 10pm</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>11am - 10pm</td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td>11am - 10pm</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>11am - 11pm</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>11am - 11pm</td>
+            </tr>
+            <tr>
+              <td>Sunday</td>
+              <td>12pm - 9pm</td>
+            </tr>
+          </table>
